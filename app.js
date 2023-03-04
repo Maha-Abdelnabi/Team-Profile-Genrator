@@ -4,7 +4,6 @@ const Maneger = require("./lib/maneger.js");
 const Engineer = require("./lib/engineer.js");
 const Intern = require("./lib/intern.js");
 
-
 //This creates the prompt to determine which role needs to be added to the team.
 function chooseEmployee() {
   inquirer
@@ -12,8 +11,13 @@ function chooseEmployee() {
       {
         type: "list",
         name: "employee",
-        message: "What is the employee's role?",
-        choices: ["Maneger", "Engineer", "Intern"],
+        message: "What type of employee would you like to add to your team?",
+        choices: [
+          "Maneger",
+          "Engineer",
+          "Intern",
+          "None",
+        ],
       },
     ])
     .then((response) => {
@@ -29,11 +33,12 @@ function chooseEmployee() {
         case "Intern":
           createIntern();
           break;
-       
+
+        default:
+          createTeam();
       }
     });
 }
-
 
 //create maneger prompt
 const teamMembers = [];
@@ -145,6 +150,12 @@ function createIntern() {
       teamMembers.push(intern);
     })
     .then(() => chooseEmployee());
+}
+
+//creates the HTML file
+function createTeam() {
+ 
+  console.log("Sucsess, the team created!");
 }
 
 //call the prompts function
