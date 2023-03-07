@@ -9,7 +9,7 @@ This is a screenshot of the generated HTML webpage.
 
 ## Walkthrough Video link
 
-![Team Generator Walkthrough Video](https://drive.google.com/file/d/1MlRYIn-JIcC5NrMw_MSt-ikwB2UXKYgU/view)
+[Team Generator Walkthrough Video](https://drive.google.com/file/d/1MlRYIn-JIcC5NrMw_MSt-ikwB2UXKYgU/view)
 
 ## Description
 
