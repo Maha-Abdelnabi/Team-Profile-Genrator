@@ -34,6 +34,6 @@ describe("maneger", () => {
   it("should returns the role maneger from the input", () => {
     const manegerRole = maneger.getRole();
 
-    expect(manegerRole).toMatch("maneger");
+    expect(manegerRole).toMatch("Maneger");
   });
 });

@@ -5,8 +5,8 @@ describe("engineer", () => {
   const engineer = new Engineer(
     "Lara",
     "147852",
-    "lara@email.com",
-    "lara-github"
+    "Lara@email.com",
+    "Lara-github"
   );
   //test engineer name
   it("should returns the name from the input", () => {
@@ -26,14 +26,14 @@ describe("engineer", () => {
   it("should returns the email from the input", () => {
     const engineerEmail = engineer.getEmail("Lara@email.com");
 
-    expect(engineerEmail).toMatch("Lara@email.com");
+    expect(engineerEmail).toBe("Lara@email.com");
   });
 
   //test engineer github
   it("should returns the GitHub username from the input", () => {
     const engineerGithub = engineer.getGithub("Lara-github");
 
-    expect(engineerGithub).toMatch("Lara-github");
+    expect(engineerGithub).toBe("Lara-github");
   });
 
   //test engineer role
