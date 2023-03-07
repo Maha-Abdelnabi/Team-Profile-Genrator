@@ -39,9 +39,10 @@ function chooseEmployee() {
       }
     });
 }
+//array to push all thr answers on it
+const teamMembers = [];
 
 //create maneger prompt
-const teamMembers = [];
 function createManeger() {
   inquirer
     .prompt([
@@ -152,9 +153,9 @@ function createIntern() {
     .then(() => chooseEmployee());
 }
 
-//creates the HTML file
+//creates the HTML file..and add the answers to generateTeam function
 function createTeam() {
- 
+ fs.writeFileSync("./dist/index.html", generateTeam(team));
   console.log("Sucsess, the team created!");
 }
 
