@@ -20,14 +20,14 @@ describe("maneger", () => {
   it("should returns the email from the input", () => {
     const manegerEmail = maneger.getEmail("Alex@email.com");
 
-    expect(manegerEmail).toMatch("Alex@email.com");
+    expect(manegerEmail).toBe("Alex@email.com");
   });
 
   //test maneger office number
   it("should returns the office number from the input", () => {
     const manegerOfficeNum = maneger.getOfficeNumber("college");
 
-    expect(manegerOfficeNum).toMatch("2");
+    expect(manegerOfficeNum).toEqual("2");
   });
 
   //test maneger role

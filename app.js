@@ -3,6 +3,8 @@ const fs = require("fs");
 const Maneger = require("./lib/maneger.js");
 const Engineer = require("./lib/engineer.js");
 const Intern = require("./lib/intern.js");
+const generateSite = require('./src/template.js')
+console.log('Welcome! please answer the following question to create your profile. ')
 
 //This creates the prompt to determine which role needs to be added to the team.
 function chooseEmployee() {
@@ -155,7 +157,8 @@ function createIntern() {
 
 //creates the HTML file..and add the answers to generateTeam function
 function createTeam() {
- fs.writeFileSync("./dist/index.html", generateTeam(team));
+  
+ fs.writeFileSync("./dist/index.html", generateSite(teamMembers));
   console.log("Sucsess, the team created!");
 }
 

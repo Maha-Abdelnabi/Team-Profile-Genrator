@@ -1,34 +1,31 @@
 const generateTeam = (team) => {
-  console.log(team);
   // Create an empty array to push html elements on to and loop through the team data
   const html = [];
   // Create functions for each type of employee that returns HTML data
-  const generateManager = (manager) => {
-    console.log(manager);
-    let managerHtml = ` 
-       <div class="container">
-        <div class="row">
-            <div class="row team-area col-12 d-flex justify-content-center">
-                
+  const generateManager = (maneger) => {
+    console.log(maneger);
+    let manegerHtml = ` 
+    
 <div class="card employee-card">
     <div class="card-header">
-        <h2 class="card-title">${manager.name}</h2>
-        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
+        <h2 class="card-title">${maneger.name}</h2>
+        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Maneger</h3>
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">ID: ${manager.id}</li>
-            <li class="list-group-item">Email: <a href="mailto:${manager.email}">s${manager.email}</a></li>
+            <li class="list-group-item">ID: ${maneger.id}</li>
+            <li class="list-group-item">Email: <a href="mailto:${maneger.email}">s${maneger.email}</a></li>
             <li class="list-group-item">Office number: 1</li>
         </ul>
     </div>
 </div>
         `;
-    html.push(managerHtml);
+    html.push(manegerHtml);
   };
   const generateEngineer = (engineer) => {
     console.log(engineer);
     let engineerHtml = ` 
+    
     <div class="card employee-card">
     <div class="card-header">
         <h2 class="card-title">${engineer.name}</h2>
@@ -41,6 +38,7 @@ const generateTeam = (team) => {
             <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.githubUsername}" target="_blank" rel="noopener noreferrer">${engineer.githubUsername}</a></li>
         </ul>
     </div>
+</div>
 </div>
         `;
     html.push(engineerHtml);
@@ -66,10 +64,10 @@ const generateTeam = (team) => {
     html.push(internHtml);
   };
 
-  // create a loop for all of the employees
+  // create a loop to pass each function data, to use it many times as needed
   for (let i = 0; i < team.length; i++) {
-    if (team[i].getRole() === "Manager") {
-      generateManager(team[i]);
+    if (team[i].getRole() === "Maneger") {
+        generateManager(team[i]);
     }
     if (team[i].getRole() === "Engineer") {
       generateEngineer(team[i]);
@@ -98,12 +96,27 @@ module.exports = (team) => {
     <title>Team Profile Generator</title>
 </head>
 <body>
-    <header>
+    <header style= 'background-color: rgb(81, 125, 139');>
     <h1> My Team </h1>
     </header>
+    <main>  
+    <div class="card employee-card">
+    <div class="card-header">
+        <h2 class="card-title">w</h2>
+        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>Intern</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: w</li>
+            <li class="list-group-item">Email: <a href="mailto:w">w</a></li>
+            <li class="list-group-item">School:w</li>
+        </ul>
+    </div>
+</div>
     <main> ${generateTeam(team)} </main>
      
 </body>
 </html>
     `;
 };
+
